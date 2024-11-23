@@ -116,8 +116,19 @@ Although the two models were competitive for value estimation, the transformer-b
 
 # References
 
-1. McGrath, [2022].  
-2. Dosovitskiy, A., et al., [2021].  
-3. Lichess Evaluated Dataset, [Lichess.org](https://database.lichess.org/).  
-4. Kaggle Chess Dataset, [Kaggle.com](https://www.kaggle.com/).  
-5. Fedus, W., et al., [2022].
+[1] T. McGrath, A. Kapishnikov, N. Tomaˇsev,
+A. Pearce, M. Wattenberg, D. Hassabis, B. Kim,
+U. Paquet, and V. Kramnik, “Acquisition of chess
+knowledge in alphazero,” Proceedings of the National Academy of Sciences, vol. 119, Nov. 2022.
+[2] A. Dosovitskiy, L. Beyer, A. Kolesnikov, D. Weissenborn, X. Zhai, T. Unterthiner, M. Dehghani,
+M. Minderer, G. Heigold, S. Gelly, J. Uszkoreit, and N. Houlsby, “An image is worth 16x16
+words: Transformers for image recognition at
+scale,” 2021.
+[3] “Lichess database.”
+https://database.lichess.org/evals.
+[4] “Kaggle chess dataset.”
+https://www.kaggle.com/datasets/ronakbadhe/chessevaluations.
+[5] A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit,
+L. Jones, A. N. Gomez, L. Kaiser, and I. Polosukhin, “Attention is all you need,” 2023.
+[6] W. Fedus, B. Zoph, and N. Shazeer, “Switch
+transformers: Scaling to trillion parameter models with simple and efficient sparsity,” 2022.
