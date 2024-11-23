@@ -49,11 +49,11 @@ The Transformer Chess Model is implemented using the PyTorch library. It consist
 
 We use a two-embedding system to represent a single square in a board state:
 
-1. **Relative Piece Embedding**: A trainable vector of weights in \(\mathbb{R}^n\), where every unique piece has a 'friendly' and 'enemy' embedding.  
-2. **Fixed Positional Embeddings**: Another trainable vector of weights in \(\mathbb{R}^n\), where each square (e.g., `A1`) has an assigned embedding.  
+1. **Relative Piece Embedding**: A trainable vector of weights in $\mathbb{R}^n$, where every unique piece has a 'friendly' and 'enemy' embedding.  
+2. **Fixed Positional Embeddings**: Another trainable vector of weights in $\mathbb{R}^n$, where each square (e.g., `A1`) has an assigned embedding.  
 
-This allows boards to be viewed from either player's perspective. For example, the `A1` square on the starting board from White's perspective combines the friendly rook embedding with the `A1` positional embedding. Final board states are represented as a matrix \(M^{64 \times n}\).  
-*\(n\) represents the dimensions of the embeddings.*
+This allows boards to be viewed from either player's perspective. For example, the `A1` square on the starting board from White's perspective combines the friendly rook embedding with the `A1` positional embedding. Final board states are represented as a matrix $M^{64 \times n}$.  
+*$n$ represents the dimensions of the embeddings.*
 
 ### Transformer Encoder
 
@@ -71,7 +71,7 @@ The second explored transformer encoder is based on the Switch Transformer archi
 
 ### Output Layers
 
-The transformed output from the encoder '\(64 \times n\)' is flattened to a single layer of size \(64 \cdot n\) and projected into either the action or value space:
+The transformed output from the encoder $\(64 \times n\)$ is flattened to a single layer of size \(64 \cdot n\) and projected into either the action or value space:
 
 - **Action Models**: 1968 neurons, with outputs masked using the legal move mask to exclude invalid moves.  
 - **Value Models**: A single output neuron with Tanh activation for regression.
@@ -84,8 +84,8 @@ A [ CLS ] style token was also explored in subexperiments
 
 The following settings were used for all models:
 
-- **Optimizer**: Adam (\(\beta_1 = 0.9\), \(\beta_2 = 0.999\), weight decay \(= 1 \times 10^{-2}\))  
-- **Learning Rate**: \(1 \times 10^{-4}\)  
+- **Optimizer**: Adam $\(\beta_1 = 0.9\)$, $\(\beta_2 = 0.999\)$, weight decay $\(= 1 \times 10^{-2}\)$  
+- **Learning Rate**: $\(1 \times 10^{-4}\)$  
 - **Gradient Clipping Value**: 2.0  
 - **Batch Size**: 1024  
 - **Total Training Steps**: 3906  
