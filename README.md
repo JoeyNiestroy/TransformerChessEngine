@@ -132,3 +132,8 @@ https://www.kaggle.com/datasets/ronakbadhe/chessevaluations.
 L. Jones, A. N. Gomez, L. Kaiser, and I. Polosukhin, “Attention is all you need,” 2023.
 [6] W. Fedus, B. Zoph, and N. Shazeer, “Switch
 transformers: Scaling to trillion parameter models with simple and efficient sparsity,” 2022.
+
+# Example of Board Projection
+Below is an example of how a friendly rook on A1 would be represented 
+
+<img width="341" alt="example" src="https://github.com/user-attachments/assets/a29a2ddd-232e-43eb-adfb-5f6b99dd657f">
