@@ -116,26 +116,7 @@ class Dataset(Dataset):
         values = self.values[idx]
         return sample, target, mask, targets_move,values
 
-def convert_to_bin_indices(values, num_bins=32):
-    # Ensure the values are in the range [0, 1)
-    values = values.clamp(0, 1 - 1e-6)
 
-    # Scale the values to the range [0, num_bins)
-    scaled_values = values * num_bins
-
-    # Convert to integer indices
-    bin_indices = scaled_values.floor().long()
-
-    return bin_indices
-
-def apply_mask_to_bins(bin_indices, mask, ignored_index=32):
-    # Create a mask where condition is True for values < 0 in the original mask tensor
-    condition_mask = mask < 0
-
-    # Use the condition mask to set corresponding locations in bin_indices to ignored_index
-    bin_indices[condition_mask] = ignored_index
-
-    return bin_indices
 
 
 print('Classes Loaded')
@@ -201,14 +182,6 @@ if __name__ == '__main__':
                 values = 2* (values-.5)
 
 
-                # print(targets_move[0])
-                # for thing in [target, mask, targets_move, values]:
-                #      print(thing.shape)
-
-                # bins = (convert_to_bin_indices(targets_move, num_bins= 64))
-                # final_binned_masked_action_values = apply_mask_to_bins(bins, targets_move, ignored_index= 100)
-
-                final_values = convert_to_bin_indices(values, num_bins= 128)
 
 
                 output1, output2, output3, dense, predicted_values = model(data[:,0,:], data[:,1,:] , mask)
